@@ -1,0 +1,6 @@
+/* Overview page */
+.profile .foot .ic a{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:17px;transition:transform .25s var(--ease-out,ease)}
+.profile .foot .ic a:hover{transform:translateY(-2px)}
+.m-docs .g .doc{border:none;padding:0;overflow:hidden;background:#111}
+.m-docs .g .doc img{width:100%;height:100%;object-fit:cover;object-position:center 78%;display:block;transition:transform .4s var(--ease-out,ease)}
+.m-docs .g .doc:hover img{transform:scale(1.04)}
