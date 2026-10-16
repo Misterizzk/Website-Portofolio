@@ -15,7 +15,7 @@ export const profile = {
   education: "Informatics, Gunadarma",
   experienceLabel: "1+ year experience",
   photos: [
-    { src: "/img/profile/faiz-1.webp", position: "center 20%" },
+    { src: "/img/profile/faiz-v2.webp", position: "center 20%" },
     { src: "/img/profile/faiz-2.jpg", position: "center 32%" },
     { src: "/img/profile/faiz-3.jpg", position: "center 30%" },
     { src: "/img/profile/faiz-4.jpg", position: "center 38%" },

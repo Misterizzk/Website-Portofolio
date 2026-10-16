@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Faiz Rizki Azmi | Portfolio",
     description,
-    images: ["/img/profile/faiz-1.webp"],
+    images: ["/img/profile/faiz-v2.webp"],
   },
 };
 
