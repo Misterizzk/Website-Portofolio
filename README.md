@@ -1,70 +1,83 @@
 # Faiz Rizki Azmi · Portfolio
 
-A personal portfolio shaped like a dashboard. Static HTML, CSS, and JavaScript with no build step and no dependencies.
+A personal portfolio shaped like a dashboard. Built with **Next.js (App Router)**, **React**, and **TypeScript**, with plain CSS. Every page is prerendered as static HTML.
 
 ## Pages
 
-| File | Page |
-|------|------|
-| `index.html` | Overview: profile, stats, about, achievements, journey, skills, experience with popups |
-| `projects.html` | Projects: cards that expand into a panel, plus case study popups |
-| `achievements.html` | Achievements: competitions, talks, recognition, trainings, with proof popups |
+| Route | Page |
+|-------|------|
+| `/` | Overview: profile, stats, about, latest achievements, journey timeline, skills, experience with popups |
+| `/projects` | Projects: cards that expand into a panel, plus case study popups |
+| `/achievements` | Achievements: competitions, talks, recognition, trainings, with proof popups |
 
-## Folder structure
+## Project structure
 
 ```
-Website/
-├── index.html
-├── projects.html
-├── achievements.html
-├── assets/
-│   ├── css/
-│   │   ├── base.css           shared: colors, layout, header, cards, popup, transitions
-│   │   ├── overview.css
-│   │   ├── projects.css
-│   │   └── achievements.css
-│   ├── js/
-│   │   ├── nav.js             shared: sliding menu, page transitions, sticky header
-│   │   ├── overview.js        experience data, popups, journey, photo switcher, count-up
-│   │   ├── projects.js        project data, expanding panel, case study popup
-│   │   └── achievements.js    achievement data and proof popup
-│   ├── img/
-│   │   ├── profile/           profile photos (click the photo to switch)
-│   │   ├── logos/             company and organization logos
-│   │   ├── experience/        documentation photos per experience
-│   │   ├── projects/          app screenshots and visuals
-│   │   └── certificates/      certificates used as proof
-│   └── docs/
-│       └── CV_Faiz_Rizki_Azmi.pdf
-├── _design/                   not part of the site
-│   ├── mockups/               earlier single-file mockups
-│   ├── previews/              screenshots of the mockups
-│   └── source/                original photos, logos, certificates, CV
-└── TODO.md
+src/
+├── app/                      routes (one folder per page)
+│   ├── layout.tsx            fonts, metadata, background, header
+│   ├── template.tsx          replays the page entrance animation on navigation
+│   ├── page.tsx              Overview
+│   ├── projects/page.tsx
+│   └── achievements/page.tsx
+├── components/
+│   ├── layout/Header.tsx     menu with sliding indicator, contact buttons
+│   ├── ui/                   Modal, CountUp, PageHead
+│   ├── overview/             ProfileCard, ExperienceCard, Journey, cards
+│   ├── projects/             ProjectsShowcase, card, panel, case study
+│   └── achievements/         AchievementsBoard
+├── data/                     all content lives here
+│   ├── profile.ts            contact links, stats, about, skills
+│   ├── experience.ts
+│   ├── projects.ts
+│   └── achievements.ts
+├── hooks/                    useSlidingIndicator, useCycler
+├── lib/types.ts              shared TypeScript types
+└── styles/
+    ├── base.css              colors, cards, popup, shared components
+    ├── responsive.css        breakpoints for shared parts
+    ├── overview.css
+    ├── projects.css          (page rules + their breakpoints)
+    └── achievements.css
+public/
+├── img/                      profile, logos, experience, projects, certificates
+└── docs/CV_Faiz_Rizki_Azmi.pdf
+_design/                      old mockups and raw sources (not deployed, git-ignored)
 ```
+
+## Responsive breakpoints
+
+| Width | Layout |
+|-------|--------|
+| > 1280px | Desktop: three columns on the Overview |
+| ≤ 1280px | Laptop: experience card moves under the first two columns |
+| ≤ 1024px | Tablet: project panel stacks, two-column project grid |
+| ≤ 900px | One column, profile and skills side by side |
+| ≤ 640px | Phone: everything stacked, menu fills the row, popups become bottom sheets |
 
 ## Editing content
 
-Most content lives in plain arrays at the top of each page script:
-
-- Experience: `const E=[...]` in `assets/js/overview.js` (role, period, points, highlights, tags, `docs` photos)
-- Projects: `const P=[...]` in `assets/js/projects.js` (description, highlights, tags, `shots`, `link`)
-- Achievements: `const A=[...]` in `assets/js/achievements.js` (story, `proof` image or list of images)
-
-To add a photo, put it in the matching `assets/img/...` folder and add its path to the array.
+Change the files in `src/data/`. Types in `src/lib/types.ts` will flag a missing field. Images go in `public/img/...` and are referenced from the root, for example `/img/experience/ut-1.jpg`.
 
 ## Run locally
 
-Open `index.html` in a browser, or serve the folder:
+Requires Node.js 20 or newer.
 
 ```bash
-python -m http.server 8000
+npm install
+npm run dev
 ```
 
-Then visit http://localhost:8000.
+Then open http://localhost:3000.
+
+```bash
+npm run build
+```
+
+builds the production version.
 
 ## Deploy
 
-Any static host works. For GitHub Pages: push this folder to a repository, then enable Pages on the main branch root. Add `_design/` to `.gitignore` first if it should stay private.
+On Vercel, import the repository and keep the default **Next.js** framework preset. Vercel builds and deploys on every push to `main`.
 
 Design file: https://www.figma.com/design/ybHC7vxZ8UwU6eVzCVD9KE

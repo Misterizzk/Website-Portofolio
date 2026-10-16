@@ -1,12 +1,11 @@
 # To-do website portofolio
 
-Website: `index.html`, `projects.html`, `achievements.html` (assets di `assets/`). Mockup lama di `_design/mockups/`. Lihat README.md.
+Website: Next.js + TypeScript di `src/` (konten di `src/data/`, gambar di `public/img/`). Mockup lama di `_design/mockups/`. Lihat README.md.
 
 ## Sekarang
 - [x] Desain Overview + popup di Figma: https://www.figma.com/design/ybHC7vxZ8UwU6eVzCVD9KE
 
 ## Menyusul
-- [ ] Tampilan HP: tiga kolom disusun jadi satu kolom
 - [x] Mockup halaman Achievements: mockups/achievements.html (ide 1, per jenis)
 - [x] Overview: kartu angka jadi "Achievements 7 total, 2022 to 2026" (5 awards + 2 talks), link "See all 7"
 - [ ] Figma: samakan kartu Awards jadi Achievements 7 dan "See all 7" (tertunda, batas MCP)
@@ -19,6 +18,8 @@ Website: `index.html`, `projects.html`, `achievements.html` (assets di `assets/`
 - [ ] Figma: skill semua Intermediate, tombol WhatsApp di kartu profil (tertunda, batas MCP)
 
 ## Sudah
+- [x] Pindah ke Next.js + TypeScript, kode dipecah jadi komponen dan data (2026-10-16)
+- [x] Responsif: laptop, tablet, HP (popup jadi bottom sheet di HP)
 - [x] Website statis dibuat dari mockup, folder dirapikan (2026-10-15)
 - [x] Count-up angka di kartu statistik saat halaman dibuka
 - [x] Animasi hover kecil di kartu

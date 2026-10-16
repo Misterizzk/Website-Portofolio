@@ -4,3 +4,15 @@
 .m-docs .g .doc{border:none;padding:0;overflow:hidden;background:#111}
 .m-docs .g .doc img{width:100%;height:100%;object-fit:cover;object-position:center 78%;display:block;transition:transform .4s var(--ease-out,ease)}
 .m-docs .g .doc:hover img{transform:scale(1.04)}
+
+/* React markup helpers */
+.skills{flex:1;display:flex;flex-direction:column}
+.skills .row-between{margin-bottom:6px}
+.langs .label{display:block;margin-bottom:8px}
+.journey{flex:1}
+.card .ach-list + .more,.more{margin-top:8px}
+.item-text{min-width:0;display:flex;flex-direction:column}
+.item-text .role{display:block}
+.item-text .co{display:block}
+.title.small{font-size:15px}
+.bar{text-align:left;font:inherit;font-size:12px}
